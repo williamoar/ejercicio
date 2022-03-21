@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Ejercicio vue</title>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	</head>
+	<body>
+		<div id="main" class="w3-container">
+			<div class="w3-card-2 w3-panel">
+				Codigo:<input class="w3-input" v-model="codigo" ><button  class="w3-button w3-blue">Buscar</button><br>
+				Titulo:<input class="w3-input" type="text" id="titulo" name="titulo" value="" v-model="titulo" ><br>
+				Autor1:<input class="w3-input" type="text" id="autor1" name="autor1" value="" v-model="autor1" ><br>
+				Pais1: <input class="w3-input" type="text" id="pais1" name="pais1" value="" v-model="pais1" ><br>
+				Autor2:<input class="w3-input" type="text" id="autor2" name="autor2" value="" v-model="autor2" ><br>
+				Pais2: <input class="w3-input" type="text" id="pais2" name="pais2" value="" v-model="pais2" ><br>
+				<button  class="w3-button w3-blue">Agregar</button>
+				<button  class="w3-button w3-blue" @click="consultarLibros">Listar</button><br>
+			</div>
+			<hr>
+<!--			
+// para probar la reactividad
+			codigo: {{ codigo }}<br>
+			titulo: {{ titulo }}<br>
+			Autor1: {{ autor1 }}<br>
+			Pais1:  {{ pais1 }}<br>
+			Autor2: {{ autor2 }}<br>
+			Pais2:  {{ pais2 }}<br>
+			<hr>
+			<hr>
+-->			
+			<table class="w3-table-all w3-hoverable">
+				<tr class="w3-green">
+					<th>CODIGO</th>
+					<th>TITULO</th>
+				</tr>
+				<tr v-for="elemento in listado">
+					<td>{{ elemento.codigo }}</td>
+					<td>{{ elemento.titulo }}</td>
+				</tr>
+				
+			</table>
+		</div>
+		
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+		<script src = "https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+		<script src = "complementos/axios.min.js"></script>
+		<script src = "app.js"></script>
+	</body>
+</html>
